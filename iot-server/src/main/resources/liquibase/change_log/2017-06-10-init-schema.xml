@@ -1,0 +1,75 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--<changeSet id="user" author="wangjun">
+        <sql>
+            create table user(
+            `ID` bigint(20) not null primary key auto_increment  comment'主键',
+            `USER_NAME` varchar(128) not null unique comment '用户名',
+            `PASSWORD` varchar(128) not null comment '密码',
+            `STATUS` tinyint not null default 1 comment '账号状态,0:失效,1:有效',
+            `CREATE_AT`            timestamp not null default CURRENT_TIMESTAMP  comment '创建时间',
+            `UPDATE_AT`            timestamp not null default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP  comment '更新时间'
+            )ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin COMMENT = '用户表' ROW_FORMAT = Compact;
+        </sql>
+    </changeSet>
+    <changeSet id="role" author="wangjun">
+        <sql>
+            create table role(
+            `ID` bigint(20) not null primary key auto_increment  comment'主键',
+            `PARENT_ID` bigint(20) not null default 0  comment'父角色ID',
+            `ROLE_NAME` varchar(128) not null unique comment '角色名',
+            `DESC` varchar(255) comment '角色描述',
+            `IS_ADMIN` tinyint not null default 0 comment '是否管理员,0:否,1:是',
+            `IS_ENABLE` tinyint not null default 1 comment '角色状态,0:失效,1:有效',
+            `CREATE_AT`            timestamp not null default CURRENT_TIMESTAMP  comment '创建时间',
+            `UPDATE_AT`            timestamp not null default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP  comment '更新时间'
+            )ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin COMMENT = '用户角色表' ROW_FORMAT = Compact;
+        </sql>
+    </changeSet>
+    <changeSet id="user_role" author="wangjun">
+        <sql>
+            create table user_role(
+            `ID` bigint(20) not null primary key auto_increment  comment'主键',
+            `USER_ID` bigint(20) not null unique comment'用户ID',
+            `ROLE_ID` bigint(20) not null comment '角色ID',
+            `CREATE_AT`            timestamp not null default CURRENT_TIMESTAMP  comment '创建时间',
+            `UPDATE_AT`            timestamp not null default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP  comment '更新时间'
+            )ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin COMMENT = '用户角色关联表' ROW_FORMAT = Compact;
+        </sql>
+    </changeSet>
+
+    <changeSet id="menu_info" author="wangjun">
+        <sql>
+            CREATE TABLE `menu_info` (
+            `ID` VARCHAR(20) NOT NULL COMMENT '有一定规则生的唯一ID(不能使用自增序列)',
+            `PARENT_ID` VARCHAR(20) NOT NULL COMMENT '当前层级的父层级ID',
+            `TYPE` TINYINT(2) NOT NULL DEFAULT '0' COMMENT '0 ：表示菜单 1： 表示LABEL(标签页)   2：表示BUTTON(操作功能项)',
+            `NAME` VARCHAR(100) NOT NULL COMMENT '菜单名称',
+            `ICON` VARCHAR(200) DEFAULT '' COMMENT '图标',
+            `URL` VARCHAR(200) DEFAULT '' COMMENT '前端使用的路由地址',
+            `SORT` INT(11) NOT NULL DEFAULT 1  COMMENT '用于同一层级元素排序',
+            `DELETE_FLAG` TINYINT(2) NOT NULL DEFAULT '0' COMMENT '0为未删除 1为已删除',
+            `CREATE_AT` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            `UPDATE_AT` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+            PRIMARY KEY (`ID`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT = '菜单表';
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="role_menu" author="wangjun">
+        <sql>
+            create table role_menu(
+            `ID` bigint(20) not null primary key auto_increment  comment'主键',
+            `ROLE_ID` bigint(20) not null comment '角色ID',
+            `PARENT_MENU_ID` VARCHAR(20) not null comment'父菜单ID',
+            `MENU_ID` VARCHAR(20) not null comment'菜单ID',
+            `CREATE_AT`            timestamp not null default CURRENT_TIMESTAMP  comment '创建时间',
+            `UPDATE_AT`            timestamp not null default CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP  comment '更新时间'
+            )ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin COMMENT = '用户角色关联表' ROW_FORMAT = Compact;
+        </sql>
+    </changeSet>-->
+</databaseChangeLog>
