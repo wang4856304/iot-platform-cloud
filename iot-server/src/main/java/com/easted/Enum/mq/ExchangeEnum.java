@@ -1,5 +1,6 @@
 package com.easted.Enum.mq;
 
+import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.core.TopicExchange;
 
 /**
@@ -12,7 +13,8 @@ import org.springframework.amqp.core.TopicExchange;
 public enum  ExchangeEnum {
 
     PLATFORM_MESSAGE("exchange_platform_message", TopicExchange.class,"平台消息交换机"),
-    CAR_TRANSPORT("exchange_car_transport", TopicExchange.class, "车辆运输业务");
+    CAR_TRANSPORT("exchange_car_transport", TopicExchange.class, "车辆运输业务"),
+    PLATFORM_MESSAGE_BROADCAST("exchange_platform_message_broadcast", FanoutExchange.class,"平台消息广播");
 
     private String exchangeName;
     private Class exchangeType;

@@ -1,5 +1,6 @@
 package com.easted.Enum.mq;
 
+import org.springframework.amqp.core.FanoutExchange;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.core.TopicExchange;
 
@@ -13,7 +14,8 @@ import org.springframework.amqp.core.TopicExchange;
 public enum ExchangeQueueEnum {
 
     PLATFORM_MESSAGE("platform_message", "exchange_platform_message", Queue.class, TopicExchange.class, "platform.message", "platform-message"),
-    CAR_TRANSPORT("car_transport", "exchange_car_transport", Queue.class, TopicExchange.class, "car.transport", "car-transport");
+    CAR_TRANSPORT("car_transport", "exchange_car_transport", Queue.class, TopicExchange.class, "car.transport", "car-transport"),
+    PLATFORM_MESSAGE_BROADCAST("platform_message_broadcast", "exchange_platform_message_broadcast", Queue.class,  FanoutExchange.class,"", "platform-message-broadcast");
     private String queueName;
     private String exchangeName;
     private Class<?> queueType;

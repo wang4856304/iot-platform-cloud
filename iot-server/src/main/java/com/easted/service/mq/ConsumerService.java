@@ -13,4 +13,5 @@ import org.springframework.amqp.core.Message;
 public interface ConsumerService {
     void consumer(Message message);
     void manualConsumer(String str, Message message, Channel channel) throws Exception;
+    void broadcastConsumer(String str, Message message, Channel channel) throws Exception;
 }

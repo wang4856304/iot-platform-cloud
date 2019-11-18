@@ -10,7 +10,8 @@ package com.easted.Enum.mq;
 public enum QueueEnum {
 
     PLATFORM_MESSAGE("platform_message", "平台消息队列"),
-    CAR_TRANSPORT("car_transport", "车辆运输业务");
+    CAR_TRANSPORT("car_transport", "车辆运输业务"),
+    PLATFORM_MESSAGE_BROADCAST("platform_message_broadcast", "平台消息广播");
 
     private String queueName;
     private String desc;
